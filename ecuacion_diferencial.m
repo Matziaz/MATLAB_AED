@@ -48,9 +48,39 @@ grid on;
 % DATOS GENERALES POSTERIORES A SALTAR
 % -------------------------------------------
 
-% y(t) = L0
+% y(t0) = L0
 
-% Fuerza elástica de la cuerda Fe = -k(y(t) - C2)
+% Fuerza elástica de la cuerda Fe = -k(y(t) - L0)
+
 % K es la constante de la cuerda (N/m)
 % L0 es la longitud de la cuerda en reposo (m)
 % y(t) es la posición del saltador en función del tiempo (t)
+
+% Ecuacion de movimiento: 
+% Fuerza neta = masa * aceleración = mg - k(y(t) - L0)
+% my'' + ky = mg + kL0
+% y'' + (k/m)y = g + (k/m)L0
+
+% solucion complementaria de la ecuacion diferencial 
+% -> si y'' + (k/m)y = 0  
+% -> r^2 = sqrt(k/m)*i -> alfa = 0, beta = sqrt(k/m) = w
+% y(t) = A * cos(wt) + B * sin(wt)
+
+% solucion particular de la ecuacion diferencial (constante)
+% yp = g + (k/m)L0 o yp = (g/w^2) + L0
+
+% solucion general de la ecuacion diferencial
+% y(t) = A * cos(wt) + B * sin(wt) + (g/w^2) + L0
+
+% condiciones iniciales
+% y(0) = 0
+% y'(0) = 0
+
+% y(0) = A + (g/w^2) + L0 = 0
+% A = - (g/w^2) - L0
+
+% y'(0) = -wB = 0
+% B = 0
+
+% y(t) = - (g/w^2) * cos(wt) + (g/w^2) + L0
+
